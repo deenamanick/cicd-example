@@ -1,5 +1,5 @@
 FROM centos:7
-MAINTAINER deenamanick@gmail.com
+MAINTAINER deenamail2004@gmail.com
 RUN yum install -y httpd \
  zip\
  unzip
