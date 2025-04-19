@@ -16,6 +16,26 @@
 ![image](https://github.com/user-attachments/assets/d22c98ba-3079-49ce-b53c-11b61bc1fe66)
 
 
+## Install ssh agent and restart Jenkins
+
+![image](https://github.com/user-attachments/assets/54407077-d13f-4664-901e-7bc1ccc433e9)
+
+## Create a pipeline
+
+![image](https://github.com/user-attachments/assets/17bfe8ac-9f62-441f-9056-35ebec525dda)
+
+## Git checkout Checking
+
+![image](https://github.com/user-attachments/assets/9af05228-2030-482c-9dd2-c6fd719a0536)
+
+## Build now
+
+
+![image](https://github.com/user-attachments/assets/ec4af5c3-b379-4bb8-8999-aad6ee3ffb54)
+
+## Jenkins console output
+
+![image](https://github.com/user-attachments/assets/baca0203-d6ad-4d70-a23c-4fecf71e8081)
 
 
 
