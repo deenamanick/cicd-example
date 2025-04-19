@@ -37,7 +37,20 @@
 
 ![image](https://github.com/user-attachments/assets/baca0203-d6ad-4d70-a23c-4fecf71e8081)
 
+## click on pipeline script
 
+![image](https://github.com/user-attachments/assets/f58e5d80-bce7-4ad4-b69d-7e3359e0fb54)
+
+## withCredentials: Both Credentails to variables
+
+![image](https://github.com/user-attachments/assets/9e7d31c5-b5f8-4b99-9cfc-8d429616e93f)
+
+
+## Adding docker hub password
+
+![image](https://github.com/user-attachments/assets/678b5a3e-20df-4a88-b90a-cf676f71d3fd)
+
+## Github 
 
 ```
 
