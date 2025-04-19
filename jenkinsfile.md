@@ -1,3 +1,24 @@
+
+## Type Jenkins Password
+
+/var/lib/jenkins/secrets/initialAdminPassword
+
+## Install default plugins.
+
+![image](https://github.com/user-attachments/assets/89a2e95f-ff77-4a2f-956f-0ec072bb4ee8)
+
+## Create first Admin User
+
+![image](https://github.com/user-attachments/assets/23730b47-6e09-4edf-9740-8073fdac9506)
+
+## Jenkins is ready
+
+![image](https://github.com/user-attachments/assets/d22c98ba-3079-49ce-b53c-11b61bc1fe66)
+
+
+
+
+
 ```
 
 node {
