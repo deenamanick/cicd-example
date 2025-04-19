@@ -82,4 +82,5 @@ terraform destroy
 This will remove all resources created by the project.
 
 ---
+### Dockerfile, ansible.yaml, front-website.yaml will be used for running the jenkins pipeline.
 
