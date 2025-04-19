@@ -1,3 +1,5 @@
+```
+
 node {
     stage('Git Checkout') {
         git branch: 'main', url: 'https://github.com/deenamanick/cicd-example.git'
@@ -24,3 +26,5 @@ node {
         }
     }
 }
+
+```
