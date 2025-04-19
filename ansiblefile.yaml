@@ -1,0 +1,7 @@
+- hosts: node
+  become: true
+  tasks: 
+     - name: delete old deployment
+       command: kubectl delete -f /home/azureuser/front-webiste.yaml
+     - name: create new deployment
+       command: kubectl apply -f /home/azureuser/front-webiste.yaml
