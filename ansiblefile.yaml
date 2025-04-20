@@ -1,7 +1,24 @@
-- hosts: node
+- name: Deployment
+  hosts: localhost
   become: true
-  tasks: 
-     - name: delete old deployment
-       command: kubectl delete -f /home/azureuser/front-webiste.yaml
-     - name: create new deployment
-       command: kubectl apply -f /home/azureuser/front-webiste.yaml
+  become_user: azureuser
+  tasks:
+    - name: Check if deployment exists and is available
+      shell: |
+        kubectl get deployment Front-website \
+        --kubeconfig=/home/azureuser/.kube/config \
+        -o jsonpath='{.status.availableReplicas}'
+      register: deployment_status
+      ignore_errors: yes
+
+    - name: Delete old deployment if not running
+      command: kubectl delete -f /home/azureuser/front-webiste.yaml
+      when: deployment_status.stdout == ""
+      environment:
+        KUBECONFIG: /home/azureuser/.kube/config
+
+    - name: Create or update deployment
+      command: kubectl apply -f /home/azureuser/front-webiste.yaml
+      environment:
+        KUBECONFIG: /home/azureuser/.kube/config
+
