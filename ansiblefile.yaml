@@ -3,17 +3,18 @@
   become: true
   become_user: azureuser
   tasks:
-    - name: Check if deployment exists and is available
+    - name: Check if deployment exists and has available replicas
       shell: |
         kubectl get deployment front-website \
         --kubeconfig=/home/azureuser/.kube/config \
         -o jsonpath='{.status.availableReplicas}'
       register: deployment_status
       ignore_errors: yes
+      changed_when: false
 
-    - name: Delete old deployment if not running
+    - name: Delete old deployment if it exists but is not running
       command: kubectl delete -f /home/azureuser/front-webiste.yaml
-      when: deployment_status.stdout == ""
+      when: deployment_status.stdout == "0"
       environment:
         KUBECONFIG: /home/azureuser/.kube/config
 
