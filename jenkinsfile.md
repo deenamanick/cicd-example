@@ -1,7 +1,12 @@
 
 ## Type Jenkins Password
 
+You will get the jenkins password from the below location. 
+
 /var/lib/jenkins/secrets/initialAdminPassword
+
+![image](https://github.com/user-attachments/assets/3b387037-48e9-432e-9775-24abe58ada21)
+
 
 ## Install default plugins.
 
