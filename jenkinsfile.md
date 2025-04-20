@@ -55,7 +55,20 @@ You will get the jenkins password from the below location.
 
 ![image](https://github.com/user-attachments/assets/678b5a3e-20df-4a88-b90a-cf676f71d3fd)
 
-## Github 
+## Github webhook
+
+![image](https://github.com/user-attachments/assets/45dca027-9530-4698-adff-0e83e11c67c0)
+
+Generate Secret for webhook integration with jenkins
+
+![image](https://github.com/user-attachments/assets/449c12c9-3c5e-4445-b13e-9ae589209097)
+
+![image](https://github.com/user-attachments/assets/14207fcf-70cc-41e7-9fca-5dbf1a2da1f7)
+
+Successfully intergrated with jenkins
+
+![image](https://github.com/user-attachments/assets/4a1d1eea-7a4c-4c2d-a2fc-3b2c6e92c189)
+
 
 ```
 
