@@ -73,6 +73,15 @@ Do empty push to run the pipeline
 
 ![image](https://github.com/user-attachments/assets/2fdb9fb2-474a-455a-908f-64cc3e8833a1)
 
+When you see different between local repo and remote repo, use the following command to fix the issue
+
+![image](https://github.com/user-attachments/assets/65a7e77a-b977-428a-a52a-f359520aee17)
+
+Add ssh agent for kubernetes server login
+
+![image](https://github.com/user-attachments/assets/dd6c4eda-4d21-462a-ae2b-182bb0f16620)
+
+
 
 ```
 
