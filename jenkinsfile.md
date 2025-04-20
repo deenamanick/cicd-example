@@ -116,12 +116,11 @@ node {
      stage ('Deploy application into Kubernetes') {
           sshagent(['kubernetes-server']) {
           sh 'ssh -o StrictHostKeyChecking=no azureuser@node1 cd /home/azureuser/plays'
-          sh 'ssh -o StrictHostKeyChecking=no azureuser@node1 ansible-playbook /home/azureuser/ansiblefile.yaml'
+          sh 'ssh -o StrictHostKeyChecking=no azureuser@node1 ansible-playbook -i /home/azureuser/plays/inventory.ini /home/azureuser/ansiblefile.yaml'
+          sh 'ssh -o StrictHostKeyChecking=no azureuser@node1 kubectl get pod'
         }
      }
-     
-     
-}
+     }
 }
 
 ```
