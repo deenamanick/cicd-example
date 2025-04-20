@@ -69,6 +69,10 @@ Successfully intergrated with jenkins
 
 ![image](https://github.com/user-attachments/assets/4a1d1eea-7a4c-4c2d-a2fc-3b2c6e92c189)
 
+Do empty push to run the pipeline
+
+![image](https://github.com/user-attachments/assets/2fdb9fb2-474a-455a-908f-64cc3e8833a1)
+
 
 ```
 
@@ -79,7 +83,7 @@ node {
 
     stage('Docker Build Image') {
         // Copy Dockerfile to home if needed — adjust as per Docker context
-        sh 'sudo cp /var/lib/jenkins/workspace/pipeline-demo/Dockerfile /home/azureuser/'
+        sh 'sudo -u azureuser cp /var/lib/jenkins/workspace/pipeline-demo/Dockerfile /home/azureuser/'
         
         // Build Docker image using the copied Dockerfile
         sh 'docker image build -t $JOB_NAME:v1.$BUILD_ID -f Dockerfile .'
