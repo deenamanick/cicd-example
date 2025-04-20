@@ -5,7 +5,7 @@
   tasks:
     - name: Check if deployment exists and is available
       shell: |
-        kubectl get deployment Front-website \
+        kubectl get deployment front-website \
         --kubeconfig=/home/azureuser/.kube/config \
         -o jsonpath='{.status.availableReplicas}'
       register: deployment_status
