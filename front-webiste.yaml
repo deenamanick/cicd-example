@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Front-website
+  name: front-website
 spec:
   replicas: 2
   selector:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: front-website
-        image: deenamanick/pipeline-demo:latest
+        image: deenamanick/pipeline_demo:latest
         ports:
         - containerPort: 80
 ---
