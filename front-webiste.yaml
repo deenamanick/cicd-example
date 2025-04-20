@@ -23,7 +23,7 @@ kind: Service
 metadata:
   name: front-website
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: front-website
   ports:
