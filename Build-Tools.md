@@ -289,5 +289,152 @@ poerty build
 
 ![image](https://github.com/user-attachments/assets/47bc9395-fbab-43c3-966d-2153b4b20a9d)
 
+---
+
+# Nodejs
 
 
+
+```bash
+#!/bin/bash
+# Create Node.js Hello World project structure
+mkdir -p node-hello-world/{src,test} && cd node-hello-world
+
+# Create src files
+cat > src/index.js << 'EOF'
+const { greet } = require('./utils');
+
+function main() {
+  console.log(greet('World'));
+}
+
+module.exports = main;
+
+if (require.main === module) {
+  main();
+}
+EOF
+
+cat > src/utils.js << 'EOF'
+function greet(name = 'World') {
+  return `Hello, ${name}!`;
+}
+
+module.exports = { greet };
+EOF
+
+# Create test file
+cat > test/index.test.js << 'EOF'
+const { greet } = require('../src/utils');
+const assert = require('assert');
+
+describe('Greet Function', () => {
+  it('should greet the world by default', () => {
+    assert.strictEqual(greet(), 'Hello, World!');
+  });
+
+  it('should greet by name', () => {
+    assert.strictEqual(greet('Alice'), 'Hello, Alice!');
+  });
+});
+EOF
+
+# Create package.json
+cat > package.json << 'EOF'
+{
+  "name": "node-hello-world",
+  "version": "1.0.0",
+  "description": "A Node.js Hello World",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "mocha test/*.test.js",
+    "build": "echo 'Building...' && npm run test",
+    "clean": "rm -rf node_modules"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^10.0.0",
+    "chai": "^4.3.0"
+  }
+}
+EOF
+
+# Create README.md
+cat > README.md << 'EOF'
+# Node.js Hello World
+
+## Setup
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+## Commands
+- **Run application**:
+  ```bash
+  npm start
+  ```
+- **Run tests**:
+  ```bash
+  npm test
+  ```
+- **Build project**:
+  ```bash
+  npm run build
+  ```
+- **Clean dependencies**:
+  ```bash
+  npm run clean
+  ```
+
+## Project Structure
+```
+node-hello-world/
+├── src/
+│   ├── index.js
+│   └── utils.js
+├── test/
+│   └── index.test.js
+├── package.json
+├── README.md
+└── run.sh
+```
+EOF
+
+# Create run.sh
+```
+cat > run.sh << 'EOF'
+#!/bin/bash
+echo "Installing dependencies..."
+npm install
+
+echo "Running tests..."
+npm test
+
+echo "Starting app..."
+npm start
+EOF
+
+# Make run.sh executable
+chmod +x run.sh
+
+echo "Node.js project created in 'node-hello-world' directory"
+echo "To get started:"
+echo "1. cd node-hello-world"
+echo "2. npm install"
+echo "3. npm start"
+```
+
+### (Note ) In case nodejs not able to install in amazon linux, run nodejs on docker
+
+```
+# Install Docker (if not installed)
+sudo amazon-linux-extras install docker -y
+sudo service docker start
+sudo usermod -a -G docker $USER
+newgrp docker  # Refresh group permissions
+
+# Run Node.js 20+ in a container
+docker run -it --rm node:20-alpine node -e "console.log('Hello from Node ' + process.version)"
+```
