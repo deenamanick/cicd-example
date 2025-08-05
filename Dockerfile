@@ -1,22 +1,25 @@
-FROM almalinux:8  
+FROM almalinux:8
 MAINTAINER deenamail2004@gmail.com
 
-# Install necessary packages
-RUN dnf install -y httpd zip unzip curl && \
-    dnf clean all
+# Install required packages
+RUN dnf install -y httpd unzip wget && dnf clean all
 
 # Set working directory
-WORKDIR /var/www/html/
+WORKDIR /tmp
 
-# Download and extract template
-RUN curl -o football-card.zip -L "https://www.free-css.com/assets/files/free-css-templates/download/page36/football-card.zip" && \
-    unzip football-card.zip && \
-    cp -rvf football-card/* . && \
-    rm -rf football-card football-card.zip
+# Download and unzip the Story template
+RUN wget --content-disposition --trust-server-names https://html5up.net/story/download/ -O html5up-story.zip && \
+    unzip -q html5up-story.zip && \
+    folder=$(unzip -Z -1 html5up-story.zip | grep '/' | cut -d/ -f1 | uniq | head -1) && \
+    mv "$folder" /var/www/html/story && \
+    rm -f html5up-story.zip
+
+# Remove default Apache index page
+RUN rm -f /var/www/html/index.html
 
 # Expose HTTP port
 EXPOSE 80
 
-# Start Apache in the foreground
+# Start Apache in foreground
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 
