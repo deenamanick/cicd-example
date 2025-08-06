@@ -1,5 +1,5 @@
 FROM almalinux:8
-MAINTAINER deenamail2004@gmail.com
+MAINTAINER deenamanick@gmail.com
 
 # Install required packages
 RUN dnf install -y httpd unzip wget && dnf clean all
