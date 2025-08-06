@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: front-website
+  name: front-website-new
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: front-website
+      app: front-website-new
   template:
     metadata:
       labels:
-        app: front-website
+        app: front-website-new
     spec:
       containers:
       - name: front-website
@@ -21,11 +21,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: front-website
+  name: front-website-new
 spec:
   type: LoadBalancer
   selector:
-    app: front-website
+    app: front-website-new
   ports:
     - protocol: TCP
       port: 80
